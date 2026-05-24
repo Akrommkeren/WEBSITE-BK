@@ -1,0 +1,467 @@
+/* ================= FEED ================= */
+.feed {
+  width: 59%;
+}
+
+/* ================= POST BOX ================= */
+.post-box {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.post-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.post-box button {
+  padding: 10px;
+  width: 100%;
+  background: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.post-box:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+/* ================= POST ================= */
+.post {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 0.2s;
+}
+
+.post:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.post img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* ================= POST STATS ================= */
+.post-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: gray;
+  margin-top: 10px;
+}
+
+/* ================= POST ACTION ================= */
+.post-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.post-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.post-actions button:hover {
+  color: #1877f2;
+}
+
+/* LIKE ACTIVE */
+.liked {
+  color: red;
+}
+
+/* ================= COMMENT ================= */
+.comment-section {
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.comment-item {
+  background: #f0f2f5;
+  padding: 8px 12px;
+  border-radius: 15px;
+  margin-bottom: 8px;
+}
+
+.comment-item b {
+  font-size: 13px;
+}
+
+.comment-item p {
+  margin: 2px 0 0;
+  font-size: 14px;
+}
+
+.comment-input {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.comment-input input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: none;
+  background: #f0f2f5;
+  outline: none;
+  font-size: 14px;
+}
+
+.comment-input button {
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ================= SIDEBAR KANAN ================= */
+.sidebar-right {
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* BOX DALAM SIDEBAR */
+.sidebar-right > div {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/* ================= FRIEND ================= */
+.friend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.friend:hover {
+  background: #f0f2f5;
+}
+
+.friend-box:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.friend-box p:first-child {
+  text-align: center;
+  cursor: pointer;
+}
+
+.friend img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* ================= NOTIF BOX ================= */
+.notif-box {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.notif-box:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+/* NOTIFIKASI */
+.notif-box p:first-child {
+  text-align: center;
+}
+
+/* ITEM NOTIF */
+.notif-item {
+  background: #f0f2f5;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+.notif-item:hover {
+  background: #e4e6eb;
+}
+
+/* TEKS NOTIF */
+.notif-item p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* WAKTU */
+.notif-item small {
+  display: block;
+  margin-top: 5px;
+  color: gray;
+  font-size: 11px;
+}
+
+/* BOX SEMUA NOTIF */
+.all-notif {
+  display: none;
+  margin-top: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* SCROLLBAR */
+.all-notif::-webkit-scrollbar {
+  width: 6px;
+}
+
+.all-notif::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.all-notif::-webkit-scrollbar-thumb {
+  background: #bcc0c4;
+  border-radius: 10px;
+}
+
+.all-notif::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* BUTTON LIHAT SEMUA */
+.notif-box button {
+  width: 100%;
+  margin-top: 10px;
+  background: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.notif-box button:hover {
+  background: #166fe5;
+}
+
+/* ================= CHAT ================= */
+.chat-box {
+  display: none;
+  margin-top: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* HEADER CHAT */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1877f2;
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.chat-header span {
+  font-weight: bold;
+}
+
+.chat-header button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+/* AREA PESAN */
+.chat-messages {
+  background: #fff;
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+/* SCROLL CHAT */
+.chat-messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* WRAPPER MESSAGE */
+.message-wrapper {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* PESAN SENDIRI */
+.my-message {
+  justify-content: flex-end;
+}
+
+/* PESAN ORANG */
+.friend-message {
+  justify-content: flex-start;
+}
+
+/* BUBBLE CHAT */
+.message {
+  max-width: 98%;
+  min-width: 220px;
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 22px;
+  word-wrap: break-word;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+}
+
+.message p {
+  margin: 0;
+}
+
+/* WARNA CHAT SENDIRI */
+.my-message .message {
+  background: #1877f2;
+  color: white;
+  border-bottom-right-radius: 8px;
+}
+
+/* WARNA CHAT TEMAN */
+.friend-message .message {
+  background: #e4e6eb;
+  color: black;
+  border-bottom-left-radius: 8px;
+}
+
+/* NAMA */
+.message b {
+  font-size: 12px;
+}
+
+/* WAKTU */
+.message small {
+  display: block;
+  font-size: 10px;
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+/* GAMBAR CHAT */
+.message img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+/* INPUT CHAT */
+.chat-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border-top: 1px solid #ddd;
+  padding: 10px 12px;
+  border-radius: 0 0 10px 10px;
+  margin-left: -4px;
+}
+
+/* INPUT TEXT */
+.chat-input input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: #f0f2f5;
+  padding: 12px 15px;
+  border-radius: 25px;
+  font-size: 14px;
+  margin-left: -4px;
+}
+
+/* ICON BUTTON */
+.chat-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #f0f2f5;
+}
+
+.chat-icon:hover {
+  background: #e4e6eb;
+}
+
+/* SEND BUTTON */
+.send-btn {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #1877f2;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin-right: 18px;
+}
+
+.send-btn:hover {
+  background: #166fe5;
+}

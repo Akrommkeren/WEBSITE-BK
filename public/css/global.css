@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f0f2f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background: #1877f2;
+  color: white;
+  padding: 25px 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.navbar-logo {
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+/* ================= LAYOUT ================= */
+.main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1600px;
+  margin: auto;
+}
+
+/* ================= SIDEBAR KIRI ================= */
+.sidebar-left {
+  width: 18%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.sidebar-left:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.sidebar-left > p:first-child {
+  text-align: center;
+}
+
+.menu-item {
+  padding: 12px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.menu-item:hover {
+  background: #f0f2f5;
+  color: #000000;
+}
+
+/* ================= DROPDOWN ================= */
+.profile-menu {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 55px;
+  background: white;
+  color: #333;
+  border-radius: 15px;
+  padding: 10px;
+  width: 180px;
+  display: none;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+.dropdown p {
+  margin: 5px 0;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.dropdown p:hover {
+  background: #f0f2f5;
+}
+
+/* ================= GROUP DROPDOWN ================= */
+.group-menu {
+  position: relative;
+}
+
+.group-dropdown {
+  display: none;
+  margin-top: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.group-dropdown p, .group-item {
+  margin: 0;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.group-dropdown p img, .group-item img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.group-dropdown > p:last-child {
+  font-weight: 700;
+  padding-left: 25px;
+}
+
+.group-dropdown p:hover, .group-item:hover {
+  background: #f0f2f5;
+}
+
+/* ================= MODAL ================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 600px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.close-modal {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #65676b;
+}
+
+.modal-body label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.modal-body input, .modal-body select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.column-config {
+  background: #f0f2f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.remove-column {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-add-column {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.btn-save-group {
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}

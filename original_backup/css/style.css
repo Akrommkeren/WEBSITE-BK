@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.555),
+      rgba(0, 0, 0, 0.555)
+    ),
+    url("../asset/background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/* AUTH PAGE */
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(10px);
+  color: rgb(0, 0, 0);
+  padding: 35px 30px; 
+  border-radius: 15px;
+  width: 350px;       
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;  
+  margin: 10px 0;       
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #4facfe;
+  box-shadow: 0 0 5px rgba(79,172,254,0.5);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: linear-gradient(to right, #4facfe, #00c6ff);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #007bff;
+}
+
+/* LOGO */
+.logo img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+/* DASHBOARD */
+.dashboard {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.navbar {
+  background: #4facfe;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.post-box {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.post {
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
