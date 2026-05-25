@@ -22,6 +22,17 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            
+            // Ensure role matches email domain on login as well
+            if (str_ends_with($user->email, '@bikinkreatif.com')) {
+                $user->role = 'staff';
+            } elseif (str_ends_with($user->email, '@gmail.com')) {
+                $user->role = 'customer';
+            }
+            
+            $user->save();
+
             $request->session()->regenerate();
             return redirect()->intended('dashboard');
         }
@@ -42,16 +53,26 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
-            'role' => 'required|in:customer,staff',
-            'division' => 'required_if:role,staff|in:admin,web_dev,designer,none',
         ]);
+
+        $role = 'customer';
+        if (str_ends_with($request->email, '@bikinkreatif.com')) {
+            $role = 'staff';
+        } elseif (str_ends_with($request->email, '@gmail.com')) {
+            $role = 'customer';
+        } else {
+            // Default or handle other domains if necessary. 
+            // The user only specified @gmail.com and @bikinkreatif.com.
+            // I'll assume others are customers for now, or maybe add a validation.
+            $role = 'customer';
+        }
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role,
-            'division' => $request->role === 'staff' ? $request->division : 'none',
+            'role' => $role,
+            'division' => 'none', // Default to none as we removed the selection
         ]);
 
         return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');

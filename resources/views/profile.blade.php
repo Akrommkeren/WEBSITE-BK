@@ -9,12 +9,12 @@
 
 @section('header')
 <div class="profile-header" style="background: white; margin-bottom: 20px;">
-    <div class="cover-photo" style="height: 180px; background: linear-gradient(to right, #1877f2, #00c6ff); width: 100%;"></div>
+    <div class="cover-photo" style="height: 230px; background: linear-gradient(to right, #1877f2, #00c6ff); width: 100%;"></div>
     <div class="profile-info-bar" style="padding: 20px 60px 40px 60px; display: flex; align-items: center; gap: 20px; position: relative;">
-        <div class="profile-avatar-container" style="width: 160px; height: 160px; border-radius: 50%; background: white; padding: 5px; margin-top: -60px; display: flex; align-items: center; justify-content: center; border: 4px solid #1877f2; z-index: 10;">
+        <div class="profile-avatar-container" style="width: 160px; height: 160px; border-radius: 50%; background: white; padding: 5px; margin-top: -80px; display: flex; align-items: center; justify-content: center; border: 4px solid #1877f2; z-index: 10;">
             <img src="{{ asset('asset/profile-biru.png') }}" style="width: 100%; height: 100%; border-radius: 50%;">
         </div>
-        <div class="profile-details" style="margin-top: 5px; margin-left: 15px;">
+        <div class="profile-details" style="margin-top: -15px; margin-left: 15px;">
             <h2 style="margin: 0; color: #1c1e21; font-size: 1.5rem;">{{ Auth::user()->name }}</h2>
             <p style="margin: 3px 0 0; color: #65676b; font-weight: 500; font-size: 0.95rem;">
                 @if(Auth::user()->role === 'customer')
