@@ -41,7 +41,9 @@ class ManagementController extends Controller
             'client_notes' => 'nullable|string',
         ]);
 
-        $projectId = 'PRJ-' . strtoupper(uniqid());
+        $year = date('Y');
+        $count = Project::whereYear('created_at', $year)->count() + 1;
+        $projectId = 'BK-' . $year . '-' . str_pad($count, 4, '0', STR_PAD_LEFT);
 
         $attachmentPath = null;
         if ($request->hasFile('attachment')) {

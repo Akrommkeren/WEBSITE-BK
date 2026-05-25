@@ -16,9 +16,9 @@
             <div style="margin-bottom: 20px;">
                 <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #1c1e21;">Kategori Layanan</label>
                 <select style="width: 100%; padding: 12px; border: 1px solid #e4e6eb; border-radius: 8px; font-family: inherit;">
-                    <option value="web_dev">Web Development</option>
-                    <option value="design">Graphic Design</option>
-                    <option value="content">Content Creation</option>
+                    <option value="website">Website</option>
+                    <option value="design">Design</option>
+                    <option value="content_vidio">Content Vidio</option>
                 </select>
             </div>
 
@@ -37,7 +37,7 @@
                 <input type="date" style="width: 100%; padding: 12px; border: 1px solid #e4e6eb; border-radius: 8px; font-family: inherit;">
             </div>
 
-            <button type="button" onclick="alert('Permintaan Anda akan dikirim ke Admin!')" style="width: 100%; padding: 15px; background: #1877f2; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; transition: background 0.3s;">
+            <button type="button" onclick="alert('Permintaan Anda akan dikirim ke Admin!')" style="width: 100%; padding: 12px; background: #1877f2; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.85rem; transition: background 0.3s;">
                 Kirim Permintaan
             </button>
         </form>

@@ -16,6 +16,7 @@
   width: 100%;
   max-width: 1220px;
   margin: auto;
+  box-shadow: none; /* Ensure no shadow by default */
 }
 
 .edit-profile-box:hover {

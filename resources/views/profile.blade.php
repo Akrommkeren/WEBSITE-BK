@@ -30,6 +30,26 @@
 
 @section('content')
 <div class="feed" style="width: 100%;">
+    <!-- POST BOX (Staff) -->
+    @can('is-staff')
+    <div class="post-box" style="background: white; padding: 20px; border-radius: 15px; margin-bottom: 25px; transition: 0.3s;">
+        <p style="text-align: center;"><b>Update Hari Ini?</b></p>
+        <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <textarea name="content" placeholder="Apa update perusahaan hari ini?" required style="width: 100%; border: 1px solid #e4e6eb; border-radius: 10px; padding: 12px; margin-bottom: 15px; resize: none; font-family: inherit;"></textarea>
+            
+            <input type="hidden" name="division" value="{{ Auth::user()->division }}">
+            
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #1c1e21;">Unggah File/Gambar:</label>
+                <input type="file" name="image" accept="image/*" style="width: 100%; padding: 10px; border: 1px solid #e4e6eb; border-radius: 8px;">
+            </div>
+            
+            <button type="submit" style="background: #1877f2; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Posting</button>
+        </form>
+    </div>
+    @endcan
+
     <!-- POST BOX (Customer) -->
     @if(Auth::user()->role === 'customer')
     <div class="post-box" style="background: white; padding: 20px; border-radius: 15px; margin-bottom: 25px; transition: 0.3s;">
@@ -138,13 +158,19 @@
         </div>
     </div>
     @else
+    <!-- CHAT (Staff Only) -->
     <div class="friend-box">
-        <p><b>Divisi Kami</b></p>
+        <p><b>Chat</b></p>
         <div id="friendList">
-            <div class="friend">
+            @php
+                $staffs = \App\Models\User::where('role', 'staff')->get();
+            @endphp
+            @foreach($staffs as $staff)
+            <div class="friend" style="cursor: pointer;" onclick="alert('Buka chat dengan {{ $staff->name }}')">
                 <img src="{{ asset('asset/profile-putih.png') }}">
-                <span>Admin Silo</span>
+                <span>{{ $staff->name }} ({{ ucfirst($staff->division) }})</span>
             </div>
+            @endforeach
         </div>
     </div>
     @endif

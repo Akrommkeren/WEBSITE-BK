@@ -44,17 +44,18 @@ body {
   display: flex;
   gap: 20px;
   padding: 20px;
-  max-width: 1600px;
-  margin: auto;
+  max-width: 100%; /* Changed from 1600px to 100% */
+  margin: 0;
 }
 
 /* ================= SIDEBAR KIRI ================= */
 .sidebar-left {
-  width: 18%;
+  width: 15%; /* Reduced from 18% */
   background: #fff;
   border-radius: 10px;
   padding: 15px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .sidebar-left:hover {
