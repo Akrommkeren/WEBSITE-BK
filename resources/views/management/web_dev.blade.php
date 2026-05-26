@@ -52,7 +52,7 @@
 
     .title-daftar-project {
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: bold;
         color: #1c1e21;
         border-bottom: 1px solid #f0f2f5;
@@ -70,7 +70,7 @@
 @section('content')
 <div class="feed-full">
     <div class="manage-card">
-        <h2 class="title-daftar-project">Daftar Project - Web Developer</h2>
+        <h2 class="title-daftar-project">Daftar Project</h2>
         
         <div style="overflow-x: auto;">
             <table class="manage-table">

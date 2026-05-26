@@ -28,7 +28,7 @@
 @endsection
 
 @section('content')
-<div class="feed" style="width: 100%; max-width: 1250px;">
+<div class="feed" style="width: 100%;">
     <div class="edit-container" style="background: white; padding: 25px; border-radius: 15px; transition: 0.3s; box-shadow: none;">
         <h3 style="margin-top: 0; color: #1c1e21; border-bottom: 1px solid #f0f2f5; padding-bottom: 15px; margin-bottom: 25px; font-size: 1.1rem; font-weight: bold;">Edit Profil</h3>
         

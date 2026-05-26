@@ -55,7 +55,7 @@
 
     .title-daftar-project {
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: bold;
         color: #1c1e21;
         border-bottom: 1px solid #f0f2f5;
@@ -244,14 +244,16 @@
                     <tr id="detail-active-1" style="display: none; background: #f8f9fa;">
                         <td colspan="8">
                             <div style="padding: 20px;">
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-                                    <div>
-                                        <p><b>Catatan Admin:</b> Segera kerjakan logo dan brand identity.</p>
-                                        <p><b>Update Progres:</b> Sudah masuk tahap sketsa kasar.</p>
-                                    </div>
-                                    <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
-                                        <button class="btn-action btn-primary" disabled>Download File Project</button>
-                                        <button class="btn-action btn-success" disabled>Link Project</button>
+                                <div style="margin-bottom: 20px;">
+                                    <p><b>Catatan Admin:</b> Segera kerjakan logo dan brand identity.</p>
+                                    <p><b>Update Progres:</b> Sudah masuk tahap sketsa kasar.</p>
+                                    
+                                    <div style="margin-top: 15px;">
+                                        <p><b>download dokumentasi:</b></p>
+                                        <div style="display: flex; gap: 10px;">
+                                            <button class="btn-action btn-primary" disabled>File Project</button>
+                                            <button class="btn-action btn-primary" disabled>Link project</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div style="display: flex; justify-content: flex-end;">
@@ -284,23 +286,25 @@
                     <tr id="detail-{{ $project->id }}" style="display: none; background: #f8f9fa;">
                         <td colspan="8">
                             <div style="padding: 20px;">
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-                                    <div>
-                                        <p><b>Catatan Admin:</b> {{ $project->admin_notes ?? '-' }}</p>
-                                        <p><b>Update Progres:</b> {{ $project->progress_notes ?? 'Belum ada update' }}</p>
-                                    </div>
-                                    <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
-                                        @if($project->completion_docs)
-                                            <a href="{{ asset('storage/' . $project->completion_docs) }}" class="btn-action btn-primary" style="text-decoration: none; display: inline-block;">Download File Project</a>
-                                        @else
-                                            <button class="btn-action btn-primary" disabled>Download File Project</button>
-                                        @endif
+                                <div style="margin-bottom: 20px;">
+                                    <p><b>Catatan Admin:</b> {{ $project->admin_notes ?? '-' }}</p>
+                                    <p><b>Update Progres:</b> {{ $project->progress_notes ?? 'Belum ada update' }}</p>
 
-                                        @if($project->completion_url)
-                                            <a href="{{ $project->completion_url }}" target="_blank" class="btn-action btn-success" style="text-decoration: none; display: inline-block;">Link Project</a>
-                                        @else
-                                            <button class="btn-action btn-success" disabled>Link Project</button>
-                                        @endif
+                                    <div style="margin-top: 15px;">
+                                        <p><b>download dokumentasi:</b></p>
+                                        <div style="display: flex; gap: 10px;">
+                                            @if($project->completion_docs)
+                                                <a href="{{ asset('storage/' . $project->completion_docs) }}" class="btn-action btn-primary" style="text-decoration: none; display: inline-block;">File Project</a>
+                                            @else
+                                                <button class="btn-action btn-primary" disabled>File Project</button>
+                                            @endif
+
+                                            @if($project->completion_url)
+                                                <a href="{{ $project->completion_url }}" target="_blank" class="btn-action btn-primary" style="text-decoration: none; display: inline-block;">Link project</a>
+                                            @else
+                                                <button class="btn-action btn-primary" disabled>Link project</button>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                                 <div style="display: flex; justify-content: flex-end;">

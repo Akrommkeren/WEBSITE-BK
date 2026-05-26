@@ -41,15 +41,57 @@
 
                 <div style="border-top: 1px solid #e4e6eb; padding-top: 15px;">
                     <p style="margin: 0 0 10px; font-weight: 500; font-size: 0.9rem; color: #1c1e21;">Data Diterima:</p>
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
                         <a href="#" style="background: #1877f2; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-size: 0.85rem; font-weight: bold; cursor: pointer;">File Project</a>
                         <a href="#" style="background: #1877f2; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-size: 0.85rem; font-weight: bold; cursor: pointer;">Link Project</a>
+                    </div>
+
+                    <hr style="border: none; border-top: 1px solid #e4e6eb; margin: 15px 0;">
+
+                    <!-- TESTIMONI SECTION -->
+                    <div id="testi-section-{{ 'BK-2026-0002' }}">
+                        <button onclick="showTestiForm('{{ 'BK-2026-0002' }}')" style="background: none; border: 1px solid #1877f2; color: #1877f2; padding: 8px 15px; border-radius: 5px; font-size: 0.85rem; font-weight: bold; cursor: pointer; width: 100%;">Berikan Testimoni</button>
+                    </div>
+
+                    <div id="testi-form-{{ 'BK-2026-0002' }}" style="display: none; margin-top: 15px; background: #f8f9fa; padding: 15px; border-radius: 10px; border: 1px solid #e4e6eb;">
+                        <p style="margin: 0 0 10px; font-weight: bold; font-size: 0.9rem;">Rating:</p>
+                        <div style="display: flex; gap: 5px; color: #ffd700; font-size: 1.5rem; margin-bottom: 15px;">
+                            <span class="star-t-BK-2026-0002" onclick="setTestiRating('BK-2026-0002', 1)" style="cursor: pointer;">☆</span>
+                            <span class="star-t-BK-2026-0002" onclick="setTestiRating('BK-2026-0002', 2)" style="cursor: pointer;">☆</span>
+                            <span class="star-t-BK-2026-0002" onclick="setTestiRating('BK-2026-0002', 3)" style="cursor: pointer;">☆</span>
+                            <span class="star-t-BK-2026-0002" onclick="setTestiRating('BK-2026-0002', 4)" style="cursor: pointer;">☆</span>
+                            <span class="star-t-BK-2026-0002" onclick="setTestiRating('BK-2026-0002', 5)" style="cursor: pointer;">☆</span>
+                        </div>
+                        <textarea placeholder="Tuliskan kesan Anda terhadap project ini..." style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 0.9rem; margin-bottom: 15px; height: 80px; resize: none;"></textarea>
+                        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                            <button onclick="hideTestiForm('BK-2026-0002')" style="padding: 8px 20px; border: 1px solid #ddd; background: white; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">Batal</button>
+                            <button onclick="alert('Testimoni berhasil diposting!')" style="padding: 8px 20px; border: none; background: #1877f2; color: white; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.85rem;">Posting</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function showTestiForm(id) {
+        document.getElementById('testi-form-' + id).style.display = 'block';
+    }
+    function hideTestiForm(id) {
+        document.getElementById('testi-form-' + id).style.display = 'none';
+    }
+    function setTestiRating(id, val) {
+        let stars = document.querySelectorAll('.star-t-' + id);
+        stars.forEach((star, index) => {
+            if (index < val) {
+                star.innerText = '★';
+            } else {
+                star.innerText = '☆';
+            }
+        });
+    }
+</script>
 <style>
     .progress-box:hover {
         box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;

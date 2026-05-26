@@ -87,6 +87,105 @@
 
     <!-- POST LIST -->
     <div id="postList">
+        <!-- Contoh Postingan Staff (Static Example) -->
+        @can('is-staff')
+        <div class="post">
+            <div class="post-header" style="display: flex; align-items: center; gap: 10px;">
+                <img src="{{ asset('asset/profile-putih.png') }}" style="width: 40px; height: 40px; border-radius: 50%; margin-top: 0;">
+                <div>
+                    <b style="display: block;">Reecro</b>
+                    <small style="color:gray;">
+                        Web Developer
+                    </small>
+                </div>
+            </div>
+            <div class="post-text" style="margin: 10px 0;">
+                <div style="margin-bottom: 10px;">
+                    <img src="{{ asset('asset/Contoh-design.png') }}" style="width: 100%; border-radius: 10px; margin-top: 0;">
+                </div>
+                Update hari ini: Fitur integrasi payment gateway untuk project BK-2026-0003 sudah selesai di-deploy ke server staging. Siap untuk ditinjau oleh tim QA.
+            </div>
+            <div class="post-stats">
+                <span>5 Like</span>
+                <span>1 Komentar</span>
+            </div>
+            <div class="post-actions">
+                <button style="font-weight: bold; background: none; border: none; cursor: pointer;">Suka</button>
+                <button onclick="toggleExampleComments('staff-comment-1')" style="font-weight: bold; background: none; border: none; cursor: pointer;">Komentar</button>
+            </div>
+            <div id="staff-comment-1" style="display: none; border-top: 1px solid #eee; margin-top: 10px; padding-top: 10px;">
+                <div style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px;">
+                    <img src="{{ asset('asset/profile-putih.png') }}" style="width: 35px; height: 35px; border-radius: 50%;">
+                    <div style="background: #f0f2f5; padding: 10px 15px; border-radius: 18px; font-size: 0.9rem; flex: 1;">
+                        <div style="font-weight: bold; color: #1c1e21;">Akmal</div>
+                        <div style="font-size: 0.75rem; color: #65676b; margin-bottom: 5px;">Designer</div>
+                        <div style="color: #050505;">Mantap mas, ditunggu updatenya!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endcan
+
+        <!-- Contoh Postingan Testimoni (Static Example) -->
+        @if(Auth::user()->role === 'customer')
+        <div class="post">
+            <div class="post-header" style="display: flex; align-items: center; gap: 10px;">
+                <img src="{{ asset('asset/profile-putih.png') }}" style="width: 40px; height: 40px; border-radius: 50%; margin-top: 0;">
+                <div>
+                    <b style="display: block;">Reecro</b>
+                    <small style="color:gray;">
+                        Pelanggan - CV. Pernapasanpetir
+                    </small>
+                </div>
+            </div>
+            <div class="post-text" style="margin: 10px 0;">
+                <div style="margin-bottom: 10px;">
+                    <img src="{{ asset('asset/Contoh-web.png') }}" style="width: 100%; border-radius: 10px; margin-top: 0;">
+                    <p style="margin: 5px 0 0;"><a href="#" style="color: #1877f2; text-decoration: none; font-size: 0.85rem;">Link Project</a></p>
+                </div>
+                <div style="color: #ffd700; margin-bottom: 5px;">★★★★★</div>
+                Sangat puas dengan hasil desain logo dari tim Silo System. Prosesnya cepat dan komunikasinya sangat lancar. Terima kasih!
+            </div>
+            <div class="post-stats">
+                <span>12 Like</span>
+                <span>3 Komentar</span>
+            </div>
+            <div class="post-actions">
+                <button style="font-weight: bold; background: none; border: none; cursor: pointer;">Suka</button>
+                <button onclick="toggleExampleComments('customer-comment-1')" style="font-weight: bold; background: none; border: none; cursor: pointer;">Komentar</button>
+            </div>
+            <div id="customer-comment-1" style="display: none; border-top: 1px solid #eee; margin-top: 10px; padding-top: 10px;">
+                <!-- Comment 1 -->
+                <div style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px;">
+                    <img src="{{ asset('asset/profile-putih.png') }}" style="width: 35px; height: 35px; border-radius: 50%;">
+                    <div style="background: #f0f2f5; padding: 10px 15px; border-radius: 18px; font-size: 0.9rem; flex: 1;">
+                        <div style="font-weight: bold; color: #1c1e21;">Abdu</div>
+                        <div style="font-size: 0.75rem; color: #65676b; margin-bottom: 5px;">Pelanggan - PT. Createlyou Corp</div>
+                        <div style="color: #050505;">Sangat memuaskan, desainnya sangat modern!</div>
+                    </div>
+                </div>
+                <!-- Comment 2 -->
+                <div style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px;">
+                    <img src="{{ asset('asset/profile-putih.png') }}" style="width: 35px; height: 35px; border-radius: 50%;">
+                    <div style="background: #f0f2f5; padding: 10px 15px; border-radius: 18px; font-size: 0.9rem; flex: 1;">
+                        <div style="font-weight: bold; color: #1c1e21;">Siti Aminah</div>
+                        <div style="font-size: 0.75rem; color: #65676b; margin-bottom: 5px;">Pelanggan - Toko Berkah</div>
+                        <div style="color: #050505;">Pelayanannya ramah dan hasil sesuai ekspektasi.</div>
+                    </div>
+                </div>
+                <!-- Comment 3 -->
+                <div style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px;">
+                    <img src="{{ asset('asset/profile-putih.png') }}" style="width: 35px; height: 35px; border-radius: 50%;">
+                    <div style="background: #f0f2f5; padding: 10px 15px; border-radius: 18px; font-size: 0.9rem; flex: 1;">
+                        <div style="font-weight: bold; color: #1c1e21;">Budi Santoso</div>
+                        <div style="font-size: 0.75rem; color: #65676b; margin-bottom: 5px;">Pelanggan - CV. Maju Jaya</div>
+                        <div style="color: #050505;">Terima kasih tim Silo System, sukses selalu!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
         @foreach($posts as $post)
         <div class="post">
             <div class="post-header">
@@ -109,13 +208,22 @@
                 <span>0 Komentar</span>
             </div>
             <div class="post-actions">
-                <button>❤️ Suka</button>
-                <button>💬 Komentar</button>
+                <button style="font-weight: bold; background: none; border: none; cursor: pointer;">Suka</button>
+                <button style="font-weight: bold; background: none; border: none; cursor: pointer;">Komentar</button>
             </div>
         </div>
         @endforeach
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    function toggleExampleComments(id) {
+        let el = document.getElementById(id);
+        el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+    }
+</script>
 @endsection
 
 @section('sidebar-right')
@@ -146,10 +254,10 @@
                 Saya ingin tanya progres project saya.
             </div>
         </div>
-        <div style="margin-top: 10px; display: flex; gap: 5px;">
-            <input type="text" placeholder="Tulis pesan..." style="flex: 1; border: 1px solid #e4e6eb; border-radius: 20px; padding: 8px 15px; font-size: 0.85rem;">
-            <button style="background: #1877f2; color: white; border: none; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+        <div style="margin-top: 10px; display: flex; gap: 8px; align-items: center;">
+            <input type="text" placeholder="Tulis pesan..." style="flex: 1; border: 1px solid #e4e6eb; border-radius: 20px; padding: 10px 15px; font-size: 0.9rem; outline: none; background: #f0f2f5;">
+            <button style="background: #1877f2; color: white; border: none; border-radius: 50%; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(24,119,242,0.25);" onmouseover="this.style.background='#166fe5'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='#1877f2'; this.style.transform='scale(1)';">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="margin-left: 2px;"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
             </button>
         </div>
     </div>
