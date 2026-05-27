@@ -100,8 +100,8 @@
                 </div>
             </div>
             <div class="post-text" style="margin: 10px 0;">
-                <div style="margin-bottom: 10px;">
-                    <img src="{{ asset('asset/Contoh-design.png') }}" style="width: 100%; border-radius: 10px; margin-top: 0;">
+                <div style="margin-bottom: 10px; display: flex; justify-content: center;">
+                    <img src="{{ asset('asset/Contoh-design.png') }}" style="max-width: 300px; width: 100%; height: auto; border-radius: 10px; margin-top: 0;">
                 </div>
                 Update hari ini: Fitur integrasi payment gateway untuk project BK-2026-0003 sudah selesai di-deploy ke server staging. Siap untuk ditinjau oleh tim QA.
             </div>
@@ -122,6 +122,14 @@
                         <div style="color: #050505;">Mantap mas, ditunggu updatenya!</div>
                     </div>
                 </div>
+                <!-- Input Komentar -->
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
+                    <img src="{{ asset('asset/profile-putih.png') }}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; margin-top: -5px;">
+                    <div style="flex: 1; background: #f0f2f5; border-radius: 20px; padding: 5px 15px; display: flex; align-items: center; border: 1px solid #e4e6eb;">
+                        <input type="text" placeholder="Tulis komentar..." style="flex: 1; border: none; background: transparent; outline: none; font-size: 0.85rem; padding: 5px 0;">
+                        <button style="background: none; border: none; color: #1877f2; font-weight: bold; cursor: pointer; font-size: 0.85rem;">Kirim</button>
+                    </div>
+                </div>
             </div>
         </div>
         @endcan
@@ -139,8 +147,8 @@
                 </div>
             </div>
             <div class="post-text" style="margin: 10px 0;">
-                <div style="margin-bottom: 10px;">
-                    <img src="{{ asset('asset/Contoh-web.png') }}" style="width: 100%; border-radius: 10px; margin-top: 0;">
+                <div style="margin-bottom: 10px; display: flex; flex-direction: column; align-items: center;">
+                    <img src="{{ asset('asset/Contoh-web.png') }}" style="max-width: 300px; width: 100%; height: auto; border-radius: 10px; margin-top: 0;">
                     <p style="margin: 5px 0 0;"><a href="#" style="color: #1877f2; text-decoration: none; font-size: 0.85rem;">Link Project</a></p>
                 </div>
                 <div style="color: #ffd700; margin-bottom: 5px;">★★★★★</div>
@@ -182,6 +190,14 @@
                         <div style="color: #050505;">Terima kasih tim Silo System, sukses selalu!</div>
                     </div>
                 </div>
+                <!-- Input Komentar -->
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
+                    <img src="{{ asset('asset/profile-putih.png') }}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; margin-top: -5px;">
+                    <div style="flex: 1; background: #f0f2f5; border-radius: 20px; padding: 5px 15px; display: flex; align-items: center; border: 1px solid #e4e6eb;">
+                        <input type="text" placeholder="Tulis komentar..." style="flex: 1; border: none; background: transparent; outline: none; font-size: 0.85rem; padding: 5px 0;">
+                        <button style="background: none; border: none; color: #1877f2; font-weight: bold; cursor: pointer; font-size: 0.85rem;">Kirim</button>
+                    </div>
+                </div>
             </div>
         </div>
         @endif
@@ -209,7 +225,17 @@
             </div>
             <div class="post-actions">
                 <button style="font-weight: bold; background: none; border: none; cursor: pointer;">Suka</button>
-                <button style="font-weight: bold; background: none; border: none; cursor: pointer;">Komentar</button>
+                <button onclick="toggleExampleComments('comment-{{ $post->id }}')" style="font-weight: bold; background: none; border: none; cursor: pointer;">Komentar</button>
+            </div>
+            <div id="comment-{{ $post->id }}" style="display: none; border-top: 1px solid #eee; margin-top: 10px; padding-top: 10px;">
+                <!-- Input Komentar -->
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <img src="{{ asset('asset/profile-putih.png') }}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; margin-top: -5px;">
+                    <div style="flex: 1; background: #f0f2f5; border-radius: 20px; padding: 5px 15px; display: flex; align-items: center; border: 1px solid #e4e6eb;">
+                        <input type="text" placeholder="Tulis komentar..." style="flex: 1; border: none; background: transparent; outline: none; font-size: 0.85rem; padding: 5px 0;">
+                        <button style="background: none; border: none; color: #1877f2; font-weight: bold; cursor: pointer; font-size: 0.85rem;">Kirim</button>
+                    </div>
+                </div>
             </div>
         </div>
         @endforeach
@@ -254,10 +280,10 @@
                 Saya ingin tanya progres project saya.
             </div>
         </div>
-        <div style="margin-top: 10px; display: flex; gap: 8px; align-items: center;">
-            <input type="text" placeholder="Tulis pesan..." style="flex: 1; border: 1px solid #e4e6eb; border-radius: 20px; padding: 10px 15px; font-size: 0.9rem; outline: none; background: #f0f2f5;">
-            <button style="background: #1877f2; color: white; border: none; border-radius: 50%; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(24,119,242,0.25);" onmouseover="this.style.background='#166fe5'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='#1877f2'; this.style.transform='scale(1)';">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="margin-left: 2px;"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+        <div style="margin-top: 10px; display: flex; gap: 8px; align-items: center; background: #f0f2f5; padding: 2px 2px 2px 12px; border-radius: 25px; border: 1px solid #e4e6eb;">
+            <input type="text" placeholder="Tulis pesan..." style="flex: 1; border: none; background: transparent; padding: 5px 0; font-size: 0.8rem; outline: none; color: #1c1e21;">
+            <button style="background: #1877f2; color: white; border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease; flex-shrink: 0;" onmouseover="this.style.background='#166fe5'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='#1877f2'; this.style.transform='scale(1)';">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display: block; margin-left: 2px;"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
             </button>
         </div>
     </div>

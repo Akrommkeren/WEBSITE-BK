@@ -117,11 +117,11 @@
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px;">
                                         <div>
                                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">File Project (Zip/Image/PDF)</label>
-                                            <input type="file" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px;">
+                                            <input type="file" style="width: 100%; padding: 7px 10px; border: 1px solid #ddd; border-radius: 6px; height: 40px; box-sizing: border-box;">
                                         </div>
                                         <div>
                                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Link Project (Github/Live Demo)</label>
-                                            <input type="url" placeholder="https://..." style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px;">
+                                            <input type="url" placeholder="https://..." style="width: 100%; padding: 7px 10px; border: 1px solid #ddd; border-radius: 6px; height: 40px; box-sizing: border-box;">
                                         </div>
                                     </div>
                                     <div style="display: flex; justify-content: flex-end;">
@@ -170,11 +170,11 @@
                                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px;">
                                             <div>
                                                 <label style="display: block; font-weight: bold; margin-bottom: 5px;">File Project (Zip/Image/PDF)</label>
-                                                <input type="file" name="completion_docs" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px;">
+                                                <input type="file" name="completion_docs" style="width: 100%; padding: 7px 10px; border: 1px solid #ddd; border-radius: 6px; height: 40px; box-sizing: border-box;">
                                             </div>
                                             <div>
                                                 <label style="display: block; font-weight: bold; margin-bottom: 5px;">Link Project (Github/Live Demo)</label>
-                                                <input type="url" name="completion_url" value="{{ $project->completion_url }}" placeholder="https://..." style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px;">
+                                                <input type="url" name="completion_url" value="{{ $project->completion_url ?? '' }}" placeholder="https://..." style="width: 100%; padding: 7px 10px; border: 1px solid #ddd; border-radius: 6px; height: 40px; box-sizing: border-box;">
                                             </div>
                                         </div>
                                         <div style="display: flex; justify-content: flex-end;">

@@ -121,10 +121,37 @@
             @if($post->image)
             <img src="{{ asset('storage/' . $post->image) }}" style="width: 100%; border-radius: 10px;">
             @endif
+            <div class="post-stats" style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; margin-top: 10px; font-size: 0.9rem; color: #65676b;">
+                <span>0 Like</span>
+                <span>0 Komentar</span>
+            </div>
+            <div class="post-actions" style="display: flex; justify-content: space-around; padding: 5px 0;">
+                <button style="font-weight: bold; background: none; border: none; cursor: pointer; color: #65676b; flex: 1; padding: 8px; border-radius: 5px; transition: 0.2s;" onmouseover="this.style.background='#f0f2f5';" onmouseout="this.style.background='none';">Suka</button>
+                <button onclick="toggleComments('comment-{{ $post->id }}')" style="font-weight: bold; background: none; border: none; cursor: pointer; color: #65676b; flex: 1; padding: 8px; border-radius: 5px; transition: 0.2s;" onmouseover="this.style.background='#f0f2f5';" onmouseout="this.style.background='none';">Komentar</button>
+            </div>
+            <div id="comment-{{ $post->id }}" style="display: none; border-top: 1px solid #eee; margin-top: 10px; padding-top: 10px;">
+                <!-- Input Komentar -->
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <img src="{{ asset('asset/profile-putih.png') }}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover;">
+                    <div style="flex: 1; background: #f0f2f5; border-radius: 20px; padding: 5px 15px; display: flex; align-items: center; border: 1px solid #e4e6eb;">
+                        <input type="text" placeholder="Tulis komentar..." style="flex: 1; border: none; background: transparent; outline: none; font-size: 0.85rem; padding: 5px 0;">
+                        <button style="background: none; border: none; color: #1877f2; font-weight: bold; cursor: pointer; font-size: 0.85rem;">Kirim</button>
+                    </div>
+                </div>
+            </div>
         </div>
         @endforeach
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    function toggleComments(id) {
+        let el = document.getElementById(id);
+        el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+    }
+</script>
 @endsection
 
 @section('sidebar-right')
@@ -150,10 +177,10 @@
                 Halo! Ada yang bisa kami bantu?
             </div>
         </div>
-        <div style="margin-top: 10px; display: flex; gap: 5px;">
-            <input type="text" placeholder="Tulis pesan..." style="flex: 1; border: 1px solid #e4e6eb; border-radius: 20px; padding: 8px 15px; font-size: 0.85rem;">
-            <button style="background: #1877f2; color: white; border: none; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+        <div style="margin-top: 10px; display: flex; gap: 8px; align-items: center; background: #f0f2f5; padding: 2px 2px 2px 12px; border-radius: 25px; border: 1px solid #e4e6eb;">
+            <input type="text" placeholder="Tulis pesan..." style="flex: 1; border: none; background: transparent; padding: 5px 0; font-size: 0.8rem; outline: none; color: #1c1e21;">
+            <button style="background: #1877f2; color: white; border: none; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease; flex-shrink: 0;" onmouseover="this.style.background='#166fe5'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='#1877f2'; this.style.transform='scale(1)';">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display: block; margin-left: 2px;"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
             </button>
         </div>
     </div>
